@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabela - Vegetables</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 2px solid #ccc;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: green;
+        }
+        .tagline {
+            font-size: 18px;
+            color: green;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: green;
+            font-weight: bold;
+        }
+        .icon {
+            font-size: 20px;
+            color: green;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .shop-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+        .shop-item {
+            background-color: white;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .quantity {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        input[type="number"] {
+            width: 50px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+        }
+        .order-button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .order-button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">GO GROCERY</div>
+        <div class="tagline">Delivering Groceries to your doorstep</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Order Now</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <i class="fas fa-search icon" onclick="alert('Search activated!')"></i>
+            <i class="fas fa-shopping-cart icon" onclick="alert('Cart activated!')"></i>
+        </nav>
+    </header>
+    <main>
+        <h1>Vegetables</h1>
+        <div class="shop-container">
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1__Dctx6HZ17lB8Q8oGQLEyqb_QKD0Ta4GA&s" alt="Tomatoes">
+                <h2>Tomatoes</h2>
+                <div class="quantity">
+                    <input type="number" id="tomatoesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Tomatoes', document.getElementById('tomatoesQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://freshbank.co.ke/wp-content/uploads/2020/04/images.jpg" alt="Kales">
+                <h2>Kales</h2>
+                <div class="quantity">
+                    <input type="number" id="kalesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Kales', document.getElementById('kalesQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGbSzbkk21KpNb3qgm_ONfT2FrOUfH9HZ0uQ&s" alt="Onions">
+                <h2>Onions</h2>
+                <div class="quantity">
+                    <input type="number" id="onionsQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Onions', document.getElementById('onionsQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://www.realsimple.com/thmb/zjJYhj0AXTu8Ndio6-Hl2NzSicY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/health-benefits-of-garlic-2000-482c21fd2d154102a9b7a46ccb34e70a.jpg" alt="Garlic">
+                <h2>Garlic</h2>
+                <div class="quantity">
+                    <input type="number" id="garlicQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Garlic', document.getElementById('garlicQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://i0.wp.com/malindians.com/wp-content/uploads/2024/11/fresh-coriander-fresh-dania.png?resize=1024%2C576&ssl=1" alt="Coriander">
+                <h2>Coriander</h2>
+                <div class="quantity">
+                    <input type="number" id="corianderQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Coriander', document.getElementById('corianderQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3gEFa31hPKYJ32cKvwJncS-Z2E5tfHExj1A&s" alt="Spices">
+                <h2>Spices</h2>
+                <div class="quantity">
+                    <input type="number" id="spicesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Spices', document.getElementById('spicesQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://www.jesmondfruitbarn.com.au/wp-content/uploads/2016/10/Jesmond-Fruit-Barn-Green-Capsicum.jpg" alt="Capsicum">
+                <h2>Capsicum</h2>
+                <div class="quantity">
+                    <input type="number" id="capsicumQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Capsicum', document.getElementById('capsicumQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://s3.ap-southeast-1.amazonaws.com/s.kalimoni-greens.com/normal-chard-spinach-kalimoniRMBK.jpg" alt="Spinach">
+                <h2>Spinach</h2>
+                <div class="quantity">
+                    <input type="number" id="spinachQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Spinach', document.getElementById('spinachQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKAk02dqF4kso7HB8nTyYFpEkG-FCUpkOQ2w&s" alt="Broccoli">
+                <h2>Broccoli</h2>
+                <div class="quantity">
+                    <input type="number" id="broccoliQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Broccoli', document.getElementById('broccoliQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://www.aprifel.com/wp-content/uploads/2019/02/fond-chou-vert.jpg" alt="Cabbage">
+                <h2>Cabbage</h2>
+                <div class="quantity">
+                    <input type="number" id="cabbageQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Cabbage', document.getElementById('cabbageQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://allianceforscience.org/wp-content/uploads/2018/02/22172931728_1223b8c407_k.jpg" alt="Eggplant">
+                <h2>Eggplant</h2>
+                <div class="quantity">
+                    <input type="number" id="eggplantQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Eggplant', document.getElementById('eggplantQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ7hTS95TtMkjTuAxHAspQGltverRM5rlqfw&s" alt="Ginger">
+                <h2>Ginger</h2>
+                <div class="quantity">
+                    <input type="number" id="gingerQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Ginger', document.getElementById('gingerQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://alphaveggies.com/wp-content/uploads/2023/07/garden-peas-1-1.jpg" alt="Peas">
+                <h2>Peas</h2>
+                <div class="quantity">
+                    <input type="number" id="peasQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Peas', document.getElementById('peasQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://cdn.mos.cms.futurecdn.net/iC7HBvohbJqExqvbKcV3pP.jpg" alt="Potatoes">
+                <h2>Potatoes</h2>
+                <div class="quantity">
+                    <input type="number" id="potatoesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Potatoes', document.getElementById('potatoesQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtN71b-q1AJ6ZqIlYQQh2OayoT7c0BI0d5QQ&s" alt="Arrow Roots">
+                <h2>Arrow Roots</h2>
+                <div class="quantity">
+                    <input type="number" id="arrowRootsQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Arrow Roots', document.getElementById('arrowRootsQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://publish.purewow.net/wp-content/uploads/sites/2/2021/03/yam-vs-sweet-potato-what-are-yams.jpg?fit=680%2C489" alt="Yams">
+                <h2>Yams</h2>
+                <div class="quantity">
+                    <input type="number" id="yamsQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Yams', document.getElementById('yamsQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://www.verywellhealth.com/thmb/0TQR5R1VfiEe5sXQ8cMG2ppUzKo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1034036504-673c1207073b4d5ab15cc45b6f362a59.jpg" alt="Cassava">
+                <h2>Cassava</h2>
+                <div class="quantity">
+                    <input type="number" id="cassavaQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Cassava', document.getElementById('cassavaQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2WuiRH7fDnSF0A-GzrWgbqZllKTbzl8j5FQ&s" alt="Sweet Potatoes">
+                <h2>Sweet Potatoes</h2>
+                <div class="quantity">
+                    <input type="number" id="sweetPotatoesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Sweet Potatoes', document.getElementById('sweetPotatoesQty').value)">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function placeOrder(item, qty) {
+            const url = `order_confirmation.html?item=${encodeURIComponent(item)}&qty=${encodeURIComponent(qty)}`;
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabela - Fruits</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        header {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 2px solid #ccc;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: green;
+        }
+        .tagline {
+            font-size: 18px;
+            color: green;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: green;
+            font-weight: bold;
+        }
+        .icon {
+            font-size: 20px;
+            color: green;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .shop-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+        .shop-item {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 200px;
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.2s;
+        }
+        .shop-item:hover {
+            transform: scale(1.05);
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        h2 {
+            margin: 20px 0 10px;
+        }
+        .order-button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .order-button:hover {
+            background-color: darkgreen;
+        }
+        .quantity {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        input[type="number"] {
+            width: 50px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">GO GROCERY</div>
+        <div class="tagline">Delivering Groceries to your doorstep</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#">Order Now</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <i class="fas fa-search icon" onclick="alert('Search activated!')"></i>
+            <i class="fas fa-shopping-cart icon" onclick="alert('Cart activated!')"></i>
+        </nav>
+    </header>
+    <main>
+        <h1>Fruits</h1>
+        <div class="shop-container">
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpfW1rRKGesNOnPwHvV-bu6ey_8aK4VDE-YA&s" alt="Bananas">
+                <h2>Bananas</h2>
+                <div class="quantity">
+                    <input type="number" id="bananasQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Bananas', document.getElementById('bananasQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQEpyYMnyRkbQSvxCNwQt8FuMmFbpfTdQcTA&s" alt="Apples">
+                <h2>Apples</h2>
+                <div class="quantity">
+                    <input type="number" id="applesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Apples', document.getElementById('applesQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR_JpXub8drjckx419hDCzsTOFnKqHh0JNEA&s" alt="Watermelon">
+                <h2>Watermelon</h2>
+                <div class="quantity">
+                    <input type="number" id="watermelonQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Watermelon', document.getElementById('watermelonQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://static.tildacdn.com/tild6365-6438-4433-a230-633762396436/The_Sweet_and_Tangy_.jpg" alt="Oranges">
+                <h2>Oranges</h2>
+                <div class="quantity">
+                    <input type="number" id="orangesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Oranges', document.getElementById('orangesQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://discountskenya.com/wp-content/uploads/2023/08/Red-Grapes-20220621141512-778x612-20221207122327-550x550w-700x700.png.jpg" alt="Grapes">
+                <h2>Grapes</h2>
+                <div class="quantity">
+                    <input type="number" id="grapesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Grapes', document.getElementById('grapesQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjp-3COA824BBzGSqKOnlCUuKGXueX4R1wxYP3e1reMFpm7Np3Accnl-o6rXqK_BIYbq_bIPpY86ORUMuXubxnb5l_5v4uQ5_AMNI40u0U6EY-X_WbF-U0FpLTak3eeM3T2Y1mdxYitpx1xupvTj9lYJUhuWd_qsoLlEMRKpPc5xVu-xg87W3DhPfMxDpVG/s520/pine.png" alt="Pineapples">
+                <h2>Pineapples</h2>
+                <div class="quantity">
+                    <input type="number" id="pineapplesQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Pineapples', document.getElementById('pineapplesQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://frutundafruits.com/wp-content/uploads/2019/08/florida-mango.jpeg" alt="Mango">
+                <h2>Mango</h2>
+                <div class="quantity">
+                    <input type="number" id="mangoQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Mango', document.getElementById('mangoQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAt6VTo3xr41ynaL7Q7gvZpFNX7QymfoTkEQ&s" alt="Lemon">
+                <h2>Lemon</h2>
+                <div class="quantity">
+                    <input type="number" id="lemonQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Lemon', document.getElementById('lemonQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://static.libertyprim.com/files/offres/vend-passion-fruit-5500-1-large.jpg?1726469960" alt="Passionfruit">
+                <h2>Passionfruit</h2>
+                <div class="quantity">
+                    <input type="number" id="passionfruitQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Passionfruit', document.getElementById('passionfruitQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXTr1M9kSphwStWynenFRpZG8NZ59-umpTWdVW8DHjnff7sjXoFAz64ry4V-eNRLrP1cs&usqp=CAU" alt="Strawberry">
+                <h2>Strawberry</h2>
+                <div class="quantity">
+                    <input type="number" id="strawberryQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Strawberry', document.getElementById('strawberryQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://5.imimg.com/data5/AY/YR/ZQ/SELLER-12497417/plum-fruit.jpg" alt="Plums">
+                <h2>Plums</h2>
+                <div class="quantity">
+                    <input type="number" id="plumsQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Plums', document.getElementById('plumsQty').value)">Place Order</button>
+                </div>
+            </div>
+            <div class="shop-item">
+                <img src="https://safiorganics.co.ke/wp-content/uploads/2022/12/www_yates_com_au-pr-tn-fruit-pawpaw.webp" alt="Pawpaw">
+                <h2>Pawpaw</h2>
+                <div class="quantity">
+                    <input type="number" id="pawpawQty" min="1" value="1">
+                    <button class="order-button" onclick="placeOrder('Pawpaw', document.getElementById('pawpawQty').value)">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function placeOrder(item, qty) {
+            const url = `order_confirmation.html?item=${encodeURIComponent(item)}&qty=${encodeURIComponent(qty)}`;
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
